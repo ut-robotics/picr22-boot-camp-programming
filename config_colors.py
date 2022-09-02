@@ -20,9 +20,9 @@ except:
     colors_lookup	= np.zeros(0x1000000, dtype=np.uint8)
 
 #camera instance for normal web cameras
-#cam = camera.OpenCVCamera(id = 2)
+#cap = camera.OpenCVCamera(id = 2)
 # camera instance for realsense cameras
-cam = camera.RealsenseCamera(exposure = 100)
+cap = camera.RealsenseCamera(exposure = 100)
 
 processor = image_processor.ImageProcessor(cap, debug=True)
 
