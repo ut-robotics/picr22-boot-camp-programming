@@ -7,8 +7,7 @@ import time
 def main_loop():
     debug = True
     
-    motion_sim = motion.TurtleRobot()
-    motion_sim2 = motion.TurtleOmniRobot()
+    motion_sim = motion.PrintingMotion()
     
     #camera instance for normal web cameras
     #cam = camera.OpenCVCamera(id = 2)
@@ -19,7 +18,6 @@ def main_loop():
 
     processor.start()
     motion_sim.open()
-    motion_sim2.open()
 
     start = time.time()
     fps = 0
@@ -60,6 +58,5 @@ def main_loop():
         cv2.destroyAllWindows()
         processor.stop()
         motion_sim.close()
-        motion_sim2.close()
 
 main_loop()
