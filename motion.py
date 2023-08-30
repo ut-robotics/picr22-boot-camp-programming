@@ -8,7 +8,7 @@ class IRobotMotion:
     def move(self, x_speed, y_speed, rot_speed):
         pass
 
-class TurtleRobot(IRobotMotion):
+class PrintingMotion(IRobotMotion):
     def open(self):
         print("Starting up!")
 
