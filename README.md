@@ -33,19 +33,19 @@ Utility to configure colors. Check log for detailed instructions.
 Segmentation module installation:
 ```
 cd segment_module
-pip3.9 install .
+pip install .
 ```
 
 Running color configurator:
 ```
 mkdir colors
 touch colors/colors.pkl
-python3.9 config_colors.py
+python config_colors.py
 ```
 
 Running an example:
 ```
-python3.9 main.py
+python main.py
 ```
 
-If you encounter dependency errors, resolve them with pip3.9
+If you encounter dependency errors, resolve them with pip
