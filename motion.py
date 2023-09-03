@@ -9,6 +9,10 @@ class IRobotMotion:
         pass
 
 class PrintingMotion(IRobotMotion):
+    ## change polarity if direction is not correct
+    def __init__(self, polarity=1):
+        self.polarity = polarity
+    
     def open(self):
         print("Starting up!")
 
@@ -17,4 +21,5 @@ class PrintingMotion(IRobotMotion):
 
     # simple logic to print what the mainboard would recieve
     def move(self, x_speed, y_speed, rot_speed):
-        print(f"Rotation speed: {rot_speed}; Side speed: {x_speed}; Forward speed: {y_speed}")
+        direction = "left" if rot_speed * polarity > 0 else "right"
+        print(f"Rotation direction: {direction};")
