@@ -21,5 +21,5 @@ class PrintingMotion(IRobotMotion):
 
     # simple logic to print what the mainboard would recieve
     def move(self, x_speed, y_speed, rot_speed):
-        direction = "left" if rot_speed * polarity > 0 else "right"
+        direction = "left" if rot_speed * self.polarity > 0 else "right"
         print(f"Rotation direction: {direction};")
