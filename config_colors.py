@@ -18,6 +18,8 @@ try:
         colors_lookup = pickle.load(fh)
 except:
     colors_lookup	= np.zeros(0x1000000, dtype=np.uint8)
+    with open('colors/colors.pkl', 'wb') as fh:
+            pickle.dump(colors_lookup, fh, -1)
 
 #camera instance for normal web cameras
 #cap = camera.OpenCVCamera(id = 2)
@@ -80,7 +82,7 @@ while(True):
 
     cv2.imshow('rgb', rgb)
     
-    fragmented	= colors_lookup[rgb[:,:,0] + rgb[:,:,1] * 0x100 + rgb[:,:,2] * 0x10000]
+    fragmented	= colors_lookup[rgb[:,:,0].astype(int) + rgb[:,:,1].astype(int) * 0x100 + rgb[:,:,2].astype(int) * 0x10000]
     frame = np.zeros((cap.rgb_height, cap.rgb_width, 3), dtype=np.uint8)
 
     for color in Color:
